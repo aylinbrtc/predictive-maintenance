@@ -1,0 +1,45 @@
+# Project memory (internal use only)
+CLAUDE.md
+
+# Data files (too large, available on Kaggle)
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Models (can be large)
+models/*.pkl
+models/*.joblib
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
