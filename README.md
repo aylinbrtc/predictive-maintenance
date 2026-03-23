@@ -69,6 +69,7 @@ predictive-maintenance/
 | `02_feature_engineering.ipynb` | Merge 5 tables, rolling features, target variable creation |
 | `03_modeling.ipynb` | Train Decision Tree, Random Forest, XGBoost, k-NN; hyperparameter tuning |
 | `04_evaluation.ipynb` | Metrics, confusion matrices, ROC/PR curves, SMOTE experiment |
+| `05_advanced_analysis.ipynb` | Temporal split, machine generalisation, horizon analysis, cost-sensitive threshold |
 
 ## Algorithms Compared
 
@@ -79,7 +80,25 @@ predictive-maintenance/
 
 ## Key Results
 
-*(To be filled after model training)*
+Binary classification target: will a failure occur within the next 24 hours?
+Dataset after feature engineering: 36,600 machine-days, 62 features, 47:1 class imbalance.
+
+| Model | Accuracy | Precision | Recall | F1 | AUC |
+|-------|----------|-----------|--------|----|-----|
+| Decision Tree | 0.9980 | 0.9388 | 0.9583 | 0.9485 | 0.9785 |
+| k-NN (k=11) | 0.9980 | 0.9108 | 0.9931 | 0.9502 | 0.9997 |
+| XGBoost (baseline) | 0.9988 | 0.9470 | 0.9931 | 0.9695 | 0.9999 |
+| XGBoost (tuned) | 0.9986 | 0.9408 | 0.9931 | 0.9662 | 1.0000 |
+| Random Forest (baseline) | 0.9988 | 0.9592 | 0.9792 | 0.9691 | 1.0000 |
+| **Random Forest (tuned)** | **0.9989** | **0.9658** | **0.9792** | **0.9724** | **0.9999** |
+
+**Best model: Random Forest (tuned) — F1 = 0.9724, AUC = 0.9999**
+
+Additional experiments (see `notebooks/05_advanced_analysis.ipynb`):
+- Temporal split validation (train Jan–Sep, test Oct–Dec): F1 = 0.9702
+- Machine generalisation (train on machines 1–80, test on 81–100): F1 = 0.9672
+- Prediction horizon: F1 drops from 0.97 (24h) to 0.36 (7 days); AUC stays above 0.93
+- Cost-sensitive threshold: shifting threshold from 0.50 → 0.40 reduces operational cost by 40% at a 5:1 FN/FP cost ratio
 
 ## Reproducibility
 
