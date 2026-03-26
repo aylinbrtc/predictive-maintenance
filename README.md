@@ -69,7 +69,8 @@ predictive-maintenance/
 | `02_feature_engineering.ipynb` | Merge 5 tables, rolling features, target variable creation |
 | `03_modeling.ipynb` | Train Decision Tree, Random Forest, XGBoost, k-NN; hyperparameter tuning |
 | `04_evaluation.ipynb` | Metrics, confusion matrices, ROC/PR curves, SMOTE experiment |
-| `05_advanced_analysis.ipynb` | Temporal split, machine generalisation, horizon analysis, cost-sensitive threshold |
+| `05_advanced_analysis.ipynb` | Temporal split, machine generalisation, horizon analysis, cost-sensitive threshold, Naive Bayes, McNemar test, SHAP, ablation study |
+| `06_walk_forward_validation.ipynb` | Monthly walk-forward validation simulating real deployment cycle |
 
 ## Algorithms Compared
 
