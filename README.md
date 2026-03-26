@@ -71,6 +71,7 @@ predictive-maintenance/
 | `04_evaluation.ipynb` | Metrics, confusion matrices, ROC/PR curves, SMOTE experiment |
 | `05_advanced_analysis.ipynb` | Temporal split, machine generalisation, horizon analysis, cost-sensitive threshold, Naive Bayes, McNemar test, SHAP, ablation study |
 | `06_walk_forward_validation.ipynb` | Monthly walk-forward validation simulating real deployment cycle |
+| `07_multiclass_classification.ipynb` | Multi-class component identification (direct + two-stage pipeline) |
 
 ## Algorithms Compared
 
