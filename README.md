@@ -23,7 +23,7 @@ Download the 5 CSV files and place them in `data/raw/`:
 
 ```bash
 # Clone the repo
-git clone <repo-url>
+git clone https://github.com/aylinbrtc/predictive-maintenance
 cd predictive-maintenance
 
 # Create a virtual environment (optional but recommended)
@@ -43,10 +43,13 @@ jupyter lab
 ```
 predictive-maintenance/
 ├── notebooks/
-│   ├── 01_eda.ipynb               # Exploratory Data Analysis
-│   ├── 02_feature_engineering.ipynb  # Data merging & feature creation
-│   ├── 03_modeling.ipynb          # Model training & hyperparameter tuning
-│   └── 04_evaluation.ipynb        # Evaluation, comparison, visualizations
+│   ├── 01_eda.ipynb                      # Exploratory Data Analysis
+│   ├── 02_feature_engineering.ipynb      # Data merging & feature creation
+│   ├── 03_modeling.ipynb                 # Model training & hyperparameter tuning
+│   ├── 04_evaluation.ipynb               # Evaluation, comparison, visualizations
+│   ├── 05_advanced_analysis.ipynb        # Naive Bayes, McNemar, SHAP, ablation, temporal/horizon/cost experiments
+│   ├── 06_walk_forward_validation.ipynb  # Monthly walk-forward validation
+│   └── 07_multiclass_classification.ipynb  # Multi-class component identification
 ├── src/
 │   ├── data_loader.py             # Load and merge datasets
 │   ├── feature_engineering.py     # Feature creation functions
@@ -79,6 +82,7 @@ predictive-maintenance/
 - Random Forest
 - XGBoost
 - k-Nearest Neighbors (k-NN)
+- Naïve Bayes (Gaussian)
 
 ## Key Results
 
@@ -96,11 +100,13 @@ Dataset after feature engineering: 36,600 machine-days, 62 features, 47:1 class 
 
 **Best model: Random Forest (tuned) — F1 = 0.9724, AUC = 0.9999**
 
-Additional experiments (see `notebooks/05_advanced_analysis.ipynb`):
+Additional experiments:
 - Temporal split validation (train Jan–Sep, test Oct–Dec): F1 = 0.9702
 - Machine generalisation (train on machines 1–80, test on 81–100): F1 = 0.9672
 - Prediction horizon: F1 drops from 0.97 (24h) to 0.36 (7 days); AUC stays above 0.93
 - Cost-sensitive threshold: shifting threshold from 0.50 → 0.40 reduces operational cost by 40% at a 5:1 FN/FP cost ratio
+- Walk-forward validation (Apr–Dec 2015, monthly): mean F1 = 0.9712, AUC = 0.9999 every month
+- Multi-class component identification: XGBoost macro F1 = 0.9781; two-stage pipeline macro F1 = 0.9716
 
 ## Reproducibility
 
