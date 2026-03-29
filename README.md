@@ -91,6 +91,7 @@ Dataset after feature engineering: 36,600 machine-days, 62 features, 47:1 class 
 
 | Model | Accuracy | Precision | Recall | F1 | AUC |
 |-------|----------|-----------|--------|----|-----|
+| Naïve Bayes | 0.9538 | 0.0584 | 0.9792 | 0.2712 | 0.9826 |
 | Decision Tree | 0.9980 | 0.9388 | 0.9583 | 0.9485 | 0.9785 |
 | k-NN (k=11) | 0.9980 | 0.9108 | 0.9931 | 0.9502 | 0.9997 |
 | XGBoost (baseline) | 0.9988 | 0.9470 | 0.9931 | 0.9695 | 0.9999 |
