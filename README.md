@@ -55,8 +55,7 @@ predictive-maintenance/
 │   ├── feature_engineering.py     # Feature creation functions
 │   ├── train.py                   # Model training pipeline
 │   └── evaluate.py                # Evaluation metrics and plots
-├── figures/                       # All saved plots (for IEEE report)
-├── report/                        # IEEE LaTeX report
+├── figures/                       # All saved plots
 ├── models/                        # Saved trained models (.joblib)
 ├── data/
 │   ├── raw/                       # Kaggle CSVs (not in git)
