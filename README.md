@@ -1,7 +1,5 @@
 # Predictive Maintenance — Industrial Machine Failure Prediction
 
-TOBB ETU · BIL 476 Data Mining · Classification Project
-
 ## Overview
 
 This project applies machine learning classification to predict industrial machine component failures using the Microsoft Azure Predictive Maintenance dataset. The goal is to answer:
